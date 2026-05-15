@@ -11,10 +11,11 @@ Edit source files:
 
 Do not edit generated files directly:
 
-- `_site/index.html`
-- `_site/posts/index.html`
-- `_site/posts/<slug>/index.html`
-- `_site/posts/page/<number>/index.html`
+- `index.html`
+- `posts/index.html`
+- `posts/<slug>/index.html`
+- `posts/page/<number>/index.html`
+- `contacts/index.html`
 
 These files are rewritten every time you run `npm run build`.
 
@@ -46,9 +47,10 @@ npm run build
 
 The build creates:
 
-- `_site/index.html`
-- `_site/posts/index.html`
-- `_site/posts/<slug>/index.html`
-- `_site/posts/page/<number>/index.html` when there are more than 10 posts
+- `index.html`
+- `posts/index.html`
+- `posts/<slug>/index.html`
+- `posts/page/<number>/index.html` when there are more than 5 posts
+- `contacts/index.html`
 
 The published site is still plain static HTML.

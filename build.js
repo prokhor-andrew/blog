@@ -13,7 +13,7 @@ const site = {
 
 const rootDir = __dirname;
 const contentDir = path.join(rootDir, "content", "posts");
-const outputDir = path.join(rootDir, "_site");
+const outputDir = rootDir;
 const generatedPostsDir = path.join(outputDir, "posts");
 
 function escapeHtml(value) {
@@ -545,6 +545,12 @@ function writeFile(filePath, contents) {
   fs.writeFileSync(filePath, `${contents}\n`);
 }
 
+function cleanGeneratedFiles() {
+  fs.rmSync(path.join(outputDir, "index.html"), { force: true });
+  fs.rmSync(path.join(outputDir, "contacts"), { recursive: true, force: true });
+  fs.rmSync(generatedPostsDir, { recursive: true, force: true });
+}
+
 function buildIndex(posts) {
   const latestPosts = posts.slice(0, site.postsPerPage);
   const html = layout({
@@ -619,17 +625,12 @@ ${pagination({ page, totalPages })}
 function build() {
   const posts = readPosts();
 
-  fs.rmSync(outputDir, { recursive: true, force: true });
+  cleanGeneratedFiles();
 
   buildIndex(posts);
   buildPostPages(posts);
   buildArchive(posts);
   buildContactsPage();
-
-  const cnamePath = path.join(rootDir, "CNAME");
-  if (fs.existsSync(cnamePath)) {
-    fs.copyFileSync(cnamePath, path.join(outputDir, "CNAME"));
-  }
 
   console.log(`Built ${posts.length} posts.`);
 }
