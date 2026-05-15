@@ -205,7 +205,7 @@ function readPosts() {
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-function layout({ title, description = site.description, children }) {
+function layout({ title, description = site.description, showIntro = false, children }) {
   const pageTitle = title === site.title ? site.title : `${title} - ${site.title}`;
 
   return `<!doctype html>
@@ -461,7 +461,7 @@ function layout({ title, description = site.description, children }) {
         <a href="/posts/">Posts</a>
         <a href="/contacts/">Contacts</a>
       </nav>
-      <p class="intro">${escapeHtml(site.description)}</p>
+      ${showIntro ? `<p class="intro">${escapeHtml(site.description)}</p>` : ""}
     </header>
 
 ${children}
@@ -555,6 +555,7 @@ function buildIndex(posts) {
   const latestPosts = posts.slice(0, site.postsPerPage);
   const html = layout({
     title: site.title,
+    showIntro: true,
     children: `    <section aria-labelledby="posts">
       <h2 id="posts">Last Posts</h2>
       ${postList(latestPosts)}
