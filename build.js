@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const site = {
   title: "Andrii Prokhorenko",
-  description: "I have been developing different software since 2016. Throughout my career I have worked as a native Android Developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.",
+  description: "I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.",
   author: "Andrii Prokhorenko",
   emailUser: "prokhor.andrew",
   emailDomain: "gmail.com",
