@@ -54,3 +54,13 @@ The build creates:
 - `contacts/index.html`
 
 The published site is still plain static HTML.
+
+## Deploy
+
+For GitHub Pages, use:
+
+```text
+Settings -> Pages -> Deploy from a branch -> main -> /root
+```
+
+Run `npm run build`, commit the generated files, and push.
