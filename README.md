@@ -55,6 +55,16 @@ The build creates:
 
 The published site is still plain static HTML.
 
+## Git hook
+
+Enable the project hooks once per clone:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+The pre-commit hook runs `npm run build` and stages the generated site files so new posts are included in the same commit.
+
 ## Deploy
 
 For GitHub Pages, use:
@@ -63,4 +73,4 @@ For GitHub Pages, use:
 Settings -> Pages -> Deploy from a branch -> main -> /root
 ```
 
-Run `npm run build`, commit the generated files, and push.
+Commit and push after writing a post. The pre-commit hook handles the build when hooks are enabled.
