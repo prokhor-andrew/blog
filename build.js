@@ -5,7 +5,8 @@ const site = {
   title: "Andrii Prokhorenko",
   description: "Notes on stuff",
   author: "Andrii Prokhorenko",
-  email: "prokhor.andrew@gmail.com",
+  emailUser: "prokhor.andrew",
+  emailDomain: "gmail.com",
   linkedin: "https://www.linkedin.com/in/andrii-prokhorenko-990b5114a/",
   github: "https://github.com/prokhor-andrew",
   postsPerPage: 5,
@@ -470,6 +471,13 @@ ${children}
       <p>&copy; 2026 ${escapeHtml(site.author)}.</p>
     </footer>
   </main>
+  <script>
+    document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
+      const address = link.dataset.emailUser + "@" + link.dataset.emailDomain;
+      link.href = "mailto:" + address;
+      link.setAttribute("aria-label", "Email " + address);
+    });
+  </script>
 </body>
 </html>`;
 }
@@ -510,7 +518,7 @@ function contactTable() {
         <tbody>
           <tr>
             <th scope="row">Email</th>
-            <td><a class="contact-link" href="mailto:${escapeAttribute(site.email)}">${icon("email")}${escapeHtml(site.email)}</a></td>
+            <td><a class="contact-link" href="#" data-email-user="${escapeAttribute(site.emailUser)}" data-email-domain="${escapeAttribute(site.emailDomain)}">${icon("email")}Email me</a></td>
           </tr>
           <tr>
             <th scope="row">LinkedIn</th>

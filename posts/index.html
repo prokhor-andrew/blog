@@ -264,5 +264,12 @@
       <p>&copy; 2026 Andrii Prokhorenko.</p>
     </footer>
   </main>
+  <script>
+    document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
+      const address = link.dataset.emailUser + "@" + link.dataset.emailDomain;
+      link.href = "mailto:" + address;
+      link.setAttribute("aria-label", "Email " + address);
+    });
+  </script>
 </body>
 </html>

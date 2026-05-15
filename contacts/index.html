@@ -260,10 +260,10 @@
         <tbody>
           <tr>
             <th scope="row">Email</th>
-            <td><a class="contact-link" href="mailto:prokhor.andrew@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <td><a class="contact-link" href="#" data-email-user="prokhor.andrew" data-email-domain="gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 6.5h16v11H4z"/>
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.5 7 7.5 6 7.5-6"/>
-    </svg>prokhor.andrew@gmail.com</a></td>
+    </svg>Email me</a></td>
           </tr>
           <tr>
             <th scope="row">LinkedIn</th>
@@ -286,5 +286,12 @@
       <p>&copy; 2026 Andrii Prokhorenko.</p>
     </footer>
   </main>
+  <script>
+    document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
+      const address = link.dataset.emailUser + "@" + link.dataset.emailDomain;
+      link.href = "mailto:" + address;
+      link.setAttribute("aria-label", "Email " + address);
+    });
+  </script>
 </body>
 </html>
