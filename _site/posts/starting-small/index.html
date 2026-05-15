@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starting small - Andrii Prokhorenko</title>
+  <meta name="description" content="This site is intentionally plain: readable text, simple links, and a tiny build step.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #fffff8;
+      --text: #1d1d1b;
+      --muted: #6a655d;
+      --link: #2457a6;
+      --rule: #ddd6c8;
+      --code: #f1eadc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #151513;
+        --text: #ece6d8;
+        --muted: #aaa293;
+        --link: #8fb5ff;
+        --rule: #38342e;
+        --code: #24211c;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    main {
+      width: min(100% - 32px, 680px);
+      margin: 48px auto 72px;
+    }
+
+    header {
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+
+    h2 {
+      margin-top: 44px;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-top: 32px;
+      font-size: 21px;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    ul {
+      margin: 0 0 20px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    time,
+    .muted {
+      color: var(--muted);
+    }
+
+    .intro {
+      font-size: 20px;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .post-list li {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      margin: 12px 0;
+    }
+
+    .post-list time {
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    article {
+      border-top: 1px solid var(--rule);
+      padding-top: 36px;
+    }
+
+    pre,
+    code {
+      background: var(--code);
+      border-radius: 4px;
+    }
+
+    code {
+      padding: 1px 4px;
+      font-size: 0.92em;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 14px 16px;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--rule);
+      margin-top: 44px;
+      padding-top: 20px;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      margin-top: 56px;
+      padding-top: 20px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 520px) {
+      body {
+        font-size: 17px;
+      }
+
+      main {
+        margin-top: 28px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .post-list li {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1><a href="/">Andrii Prokhorenko</a></h1>
+      <p class="intro">Notes on software, systems, and the small things worth writing down.</p>
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/posts/">Posts</a>
+        <a href="/#about">About</a>
+        <a href="mailto:hello@andriiprokhorenko.com">Email</a>
+      </nav>
+    </header>
+
+    <article>
+      <h2>Starting small</h2>
+      <p class="muted"><time datetime="2026-05-15">May 15, 2026</time></p>
+<p>This site is intentionally plain: readable text, simple links, and a tiny build step.</p>
+<p>A personal blog does not need much before it becomes useful. Add a Markdown file, run the build, and publish the generated HTML.</p>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 Andrii Prokhorenko. Built from Markdown into static HTML.</p>
+    </footer>
+  </main>
+</body>
+</html>
