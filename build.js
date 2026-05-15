@@ -471,13 +471,6 @@ ${children}
       <p>&copy; 2026 ${escapeHtml(site.author)}.</p>
     </footer>
   </main>
-  <script>
-    document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
-      const address = link.dataset.emailUser + "@" + link.dataset.emailDomain;
-      link.href = "mailto:" + address;
-      link.setAttribute("aria-label", "Email " + address);
-    });
-  </script>
 </body>
 </html>`;
 }
@@ -518,7 +511,7 @@ function contactTable() {
         <tbody>
           <tr>
             <th scope="row">Email</th>
-            <td><a class="contact-link" href="#" data-email-user="${escapeAttribute(site.emailUser)}" data-email-domain="${escapeAttribute(site.emailDomain)}">${icon("email")}Email me</a></td>
+            <td><span class="contact-link">${icon("email")}${escapeHtml(site.emailUser)}[at]${escapeHtml(site.emailDomain.replace(".", "[dot]"))}</span></td>
           </tr>
           <tr>
             <th scope="row">LinkedIn</th>
