@@ -6,7 +6,9 @@ const site = {
   description: "Notes on stuff",
   author: "Andrii Prokhorenko",
   email: "prokhor.andrew@gmail.com",
-  postsPerPage: 10,
+  linkedin: "https://www.linkedin.com/in/andrii-prokhorenko-990b5114a/",
+  github: "https://github.com/prokhor-andrew",
+  postsPerPage: 5,
 };
 
 const rootDir = __dirname;
@@ -216,10 +218,10 @@ function layout({ title, description = site.description, children }) {
   <style>
     :root {
       color-scheme: light dark;
-      --background: #fffff8;
-      --text: #1d1d1b;
+      --background: #ffffff;
+      --text: #000000;
       --muted: #6a655d;
-      --link: #2457a6;
+      --link: var(--text);
       --rule: #ddd6c8;
       --code: #f1eadc;
     }
@@ -229,7 +231,7 @@ function layout({ title, description = site.description, children }) {
         --background: #151513;
         --text: #ece6d8;
         --muted: #aaa293;
-        --link: #8fb5ff;
+        --link: var(--text);
         --rule: #38342e;
         --code: #24211c;
       }
@@ -315,12 +317,63 @@ function layout({ title, description = site.description, children }) {
     }
 
     .intro {
-      font-size: 20px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
 
     .post-list {
       list-style: none;
       padding: 0;
+    }
+
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+      padding: 6px 0;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .contact-table th {
+      width: 112px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-link svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      color: currentColor;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 16px;
     }
 
     .post-list li {
@@ -402,14 +455,13 @@ function layout({ title, description = site.description, children }) {
 <body>
   <main>
     <header>
-      <h1><a href="/">${escapeHtml(site.title)}</a></h1>
-      <p class="intro">${escapeHtml(site.description)}</p>
+      <h1>${escapeHtml(site.title)}</h1>
       <nav aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/posts/">Posts</a>
-        <a href="/#about">About</a>
-        <a href="mailto:${escapeAttribute(site.email)}">Email</a>
+        <a href="/contacts/">Contacts</a>
       </nav>
+      <p class="intro">${escapeHtml(site.description)}</p>
     </header>
 
 ${children}
@@ -433,6 +485,43 @@ ${posts.map((post) => `        <li>
           <a href="${escapeAttribute(post.url)}">${escapeHtml(post.title)}</a>
         </li>`).join("\n")}
       </ul>`;
+}
+
+function icon(name) {
+  const icons = {
+    email: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 6.5h16v11H4z"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.5 7 7.5 6 7.5-6"/>
+    </svg>`,
+    linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="4" y="4" width="16" height="16" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path fill="currentColor" d="M7.4 10h2.1v7H7.4zm1.1-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM11 10h2v1c.4-.7 1.2-1.2 2.3-1.2 1.8 0 3 1.2 3 3.5V17h-2.1v-3.5c0-1.1-.5-1.7-1.4-1.7s-1.6.6-1.6 1.8V17H11z"/>
+    </svg>`,
+    github: `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 19.3c-4 .9-4-2-5.6-2.4M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.8-1.4 5.8-6.2 0-1.4-.5-2.5-1.3-3.4.1-.3.6-1.7-.1-3.4 0 0-1.1-.3-3.5 1.3A12 12 0 0 0 9 3.8C6.6 2.2 5.5 2.5 5.5 2.5c-.7 1.7-.2 3.1-.1 3.4-.8.9-1.3 2-1.3 3.4 0 4.8 3 5.9 5.8 6.2-.4.4-.6.9-.6 1.7V21"/>
+    </svg>`,
+  };
+
+  return icons[name];
+}
+
+function contactTable() {
+  return `<table class="contact-table">
+        <tbody>
+          <tr>
+            <th scope="row">Email</th>
+            <td><a class="contact-link" href="mailto:${escapeAttribute(site.email)}">${icon("email")}${escapeHtml(site.email)}</a></td>
+          </tr>
+          <tr>
+            <th scope="row">LinkedIn</th>
+            <td><a class="contact-link" href="${escapeAttribute(site.linkedin)}">${icon("linkedin")}andrii-prokhorenko</a></td>
+          </tr>
+          <tr>
+            <th scope="row">GitHub</th>
+            <td><a class="contact-link" href="${escapeAttribute(site.github)}">${icon("github")}prokhor-andrew</a></td>
+          </tr>
+        </tbody>
+      </table>`;
 }
 
 function pagination({ page, totalPages }) {
@@ -461,17 +550,30 @@ function buildIndex(posts) {
   const html = layout({
     title: site.title,
     children: `    <section aria-labelledby="posts">
-      <h2 id="posts">Latest posts</h2>
+      <h2 id="posts">Last Posts</h2>
       ${postList(latestPosts)}
+      <a class="more-link" href="/posts/">more</a>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>I am Andrii. This is my personal place for writing in public.</p>
+    <section aria-labelledby="contacts">
+      <h2 id="contacts">Contacts</h2>
+      ${contactTable()}
     </section>`,
   });
 
   writeFile(path.join(outputDir, "index.html"), html);
+}
+
+function buildContactsPage() {
+  const html = layout({
+    title: "Contacts",
+    children: `    <section aria-labelledby="contacts">
+      <h2 id="contacts">Contacts</h2>
+      ${contactTable()}
+    </section>`,
+  });
+
+  writeFile(path.join(outputDir, "contacts", "index.html"), html);
 }
 
 function buildPostPages(posts) {
@@ -522,6 +624,7 @@ function build() {
   buildIndex(posts);
   buildPostPages(posts);
   buildArchive(posts);
+  buildContactsPage();
 
   const cnamePath = path.join(rootDir, "CNAME");
   if (fs.existsSync(cnamePath)) {

@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Posts - Andrii Prokhorenko</title>
-  <meta name="description" content="Notes on software, systems, and the small things worth writing down.">
+  <meta name="description" content="Notes on stuff">
   <style>
     :root {
       color-scheme: light dark;
-      --background: #fffff8;
-      --text: #1d1d1b;
+      --background: #ffffff;
+      --text: #000000;
       --muted: #6a655d;
-      --link: #2457a6;
+      --link: var(--text);
       --rule: #ddd6c8;
       --code: #f1eadc;
     }
@@ -21,7 +21,7 @@
         --background: #151513;
         --text: #ece6d8;
         --muted: #aaa293;
-        --link: #8fb5ff;
+        --link: var(--text);
         --rule: #38342e;
         --code: #24211c;
       }
@@ -107,12 +107,63 @@
     }
 
     .intro {
-      font-size: 20px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
 
     .post-list {
       list-style: none;
       padding: 0;
+    }
+
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+      padding: 6px 0;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .contact-table th {
+      width: 112px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-link svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      color: currentColor;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 16px;
     }
 
     .post-list li {
@@ -194,19 +245,26 @@
 <body>
   <main>
     <header>
-      <h1><a href="/">Andrii Prokhorenko</a></h1>
-      <p class="intro">Notes on software, systems, and the small things worth writing down.</p>
+      <h1>Andrii Prokhorenko</h1>
       <nav aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/posts/">Posts</a>
-        <a href="/#about">About</a>
-        <a href="mailto:hello@andriiprokhorenko.com">Email</a>
+        <a href="/contacts/">Contacts</a>
       </nav>
+      <p class="intro">Notes on stuff</p>
     </header>
 
     <section aria-labelledby="posts">
       <h2 id="posts">Posts</h2>
       <ul class="post-list">
+        <li>
+          <time datetime="2026-05-15">May 15, 2026</time>
+          <a href="/posts/godzilla/">godzilla</a>
+        </li>
+        <li>
+          <time datetime="2026-05-15">May 15, 2026</time>
+          <a href="/posts/starting-small/">Starting small</a>
+        </li>
         <li>
           <time datetime="2026-05-15">May 15, 2026</time>
           <a href="/posts/starting-small/">Starting small</a>
@@ -220,7 +278,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2026 Andrii Prokhorenko. Built from Markdown into static HTML.</p>
+      <p>&copy; 2026 Andrii Prokhorenko.</p>
     </footer>
   </main>
 </body>
