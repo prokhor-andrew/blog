@@ -18,7 +18,7 @@ This is the way to jump forward between words staying on the last letter.
 
 ![example of e operator](../images/vim-part-2-img-1.png)
 
-- `ge` - Jumps to the *last* letter the *previous* word. A way to navigate back from a bunch of `e`s. 
+- `ge` - Jumps to the *last* letter of the *previous* word. A way to navigate back from a bunch of `e`s. 
 
 ![example of ge operator](../images/vim-part-2-img-4.png)
 

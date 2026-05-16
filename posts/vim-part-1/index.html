@@ -257,7 +257,7 @@
       <h2 class="post-title">Vim Part 1</h2>
       <p class="muted"><time datetime="2026-05-15">May 15, 2026</time></p>
 <p>In this little post, I will focus on vim modes, basic navigation, and the commands that enable character modifications.</p>
-<h2>Main Modes</h2>
+<h2>Main modes</h2>
 <p>Vim is a mode based editor. It has many different modes, but the two main ones are:</p>
 <ul>
 <li><em>Normal</em> mode</li>
@@ -277,11 +277,18 @@
 <p>The reason for that is we usually execute commands on characters, and not type the text.</p>
 <p>As soon as we enter insert mode, the cursor switches to the familiar one. To indicate where the character will be inserted.</p>
 <p>I have to mention, that is not always the case, and it depends on the configuration of the editor.</p>
+<h2>How to exit vim</h2>
+<p>I was showing a blog post to my girlfriend, and she was trying the motions herself. When she was done, she asked the reasonable question:&quot;So, how do I close this?&quot;. That was a funny one.</p>
+<p>Jokes aside, to exit vim, type <code>:</code> following with <code>wq</code>. This will save your progress and close the editor.</p>
 <h2>Cursor movements</h2>
 <p>In normal mode, clicking <code>h</code> moves the cursor one character to the left.</p>
 <p>Clicking <code>j</code> moves the cursor one character to the bottom.</p>
 <p>Clicking <code>k</code> does the same but to the top.</p>
 <p>And <code>l</code> moves it to the right.</p>
+<h2>Undoing changes</h2>
+<p>Before we start deleting stuff, let's learn how to undo stuff.</p>
+<p>To undo the applied change, press <code>u</code>.</p>
+<p>To redo it, hold <code>Ctrl</code> and press <code>r</code>.</p>
 <h2>Deleting a character</h2>
 <p>As I have mentioned before, <code>x</code> removes the character under the cursor.</p>
 <h2>Replacing a character</h2>
