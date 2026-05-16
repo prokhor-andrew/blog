@@ -76,6 +76,11 @@ function renderInline(markdown) {
     return token;
   });
 
+  html = html.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, src) => {
+    const resolvedSrc = src.startsWith("../images/") ? src.replace("../images/", "../../images/") : src;
+    return `<img src="${escapeAttribute(resolvedSrc)}" alt="${escapeAttribute(alt)}">`;
+  });
+
   html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+|#[^)\s]+)\)/g, (_, text, href) => {
     return `<a href="${escapeAttribute(href)}">${text}</a>`;
   });
@@ -553,6 +558,15 @@ function cleanGeneratedFiles() {
   fs.rmSync(path.join(outputDir, "index.html"), { force: true });
   fs.rmSync(path.join(outputDir, "contacts"), { recursive: true, force: true });
   fs.rmSync(generatedPostsDir, { recursive: true, force: true });
+  fs.rmSync(path.join(outputDir, "images"), { recursive: true, force: true });
+}
+
+function copyImages() {
+  const srcDir = path.join(rootDir, "content", "images");
+  const destDir = path.join(outputDir, "images");
+  if (fs.existsSync(srcDir)) {
+    fs.cpSync(srcDir, destDir, { recursive: true });
+  }
 }
 
 function buildIndex(posts) {
@@ -636,6 +650,7 @@ function build() {
   buildPostPages(posts);
   buildArchive(posts);
   buildContactsPage();
+  copyImages();
 
   console.log(`Built ${posts.length} posts.`);
 }
