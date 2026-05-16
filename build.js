@@ -197,13 +197,17 @@ function readPosts() {
       return {
         title: data.title,
         date: data.date,
+        sourceFile: file,
         slug: data.slug,
         url: `/posts/${data.slug}/`,
         body,
         html: renderMarkdown(body),
       };
     })
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) => (
+      b.date.localeCompare(a.date) ||
+      b.sourceFile.localeCompare(a.sourceFile)
+    ));
 }
 
 function layout({ title, description = site.description, showIntro = false, children }) {
