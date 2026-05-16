@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vim Part 1 - Andrii Prokhorenko</title>
-  <meta name="description" content="In this little post, I will focus on vim modes, basic navigation, and commands that allow to do some character modifications. ">
+  <meta name="description" content="In this little post, I will focus on vim modes, basic navigation, and the commands that enable character modifications. ">
   <style>
     :root {
       color-scheme: light dark;
@@ -256,8 +256,7 @@
     <article>
       <h2 class="post-title">Vim Part 1</h2>
       <p class="muted"><time datetime="2026-05-15">May 15, 2026</time></p>
-<p>In this little post, I will focus on vim modes, basic navigation, and commands that allow to do some character modifications.</p>
-<p>It is important to practice switching modes, navigation, and running commands.</p>
+<p>In this little post, I will focus on vim modes, basic navigation, and the commands that enable character modifications.</p>
 <h2>Main Modes</h2>
 <p>Vim is a mode based editor. It has many different modes, but the main two ones are:</p>
 <ul>
@@ -267,10 +266,11 @@
 <p>We will get to the other modes later.</p>
 <p>&quot;Mode based&quot; means one key may do different things depending on the state of the editor.</p>
 <p>In normal mode, <code>x</code> when clicked will remove the character under the cursor.</p>
-<p>In insert mode, the same key will print letter <code>x</code> just like in any text editor.</p>
+<p>In insert mode, the same key will print letter 'x' just like in any text editor.</p>
 <h2>Switching modes</h2>
-<p>Normal mode is usually the starting point.</p>
+<p>Normal mode is usually the starting point of vim navigation.</p>
 <p>To enter the insert mode, press <code>i</code>. This will move the cursor to the left of the selected character.</p>
+<p>To get back to the normal mode, press <code>Esc</code>. It is a bit akward to reach it with the left pinky. That is why other key is usually remapped to it. I use <code>Caps Lock</code> as my <code>Esc</code> button.</p>
 <p>To enter the insert mode but with the cursor to the right, press <code>a</code>.</p>
 <h2>Weird cursor</h2>
 <p>In vim, the cursor does not usually lie between characters like in any common editor. At least not in normal mode.</p>
