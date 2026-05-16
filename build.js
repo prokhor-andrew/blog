@@ -394,10 +394,6 @@ function layout({ title, description = site.description, showIntro = false, chil
       white-space: nowrap;
     }
 
-    article {
-      padding-top: 36px;
-    }
-
     pre,
     code {
       background: var(--code);
@@ -426,6 +422,10 @@ function layout({ title, description = site.description, showIntro = false, chil
       border-top: 1px solid var(--rule);
       margin-top: 44px;
       padding-top: 20px;
+    }
+
+    .post-title {
+      margin-top: 0;
     }
 
     footer {
@@ -592,8 +592,8 @@ function buildPostPages(posts) {
     const html = layout({
       title: post.title,
       description: post.body.split("\n").find(Boolean) || site.description,
-      children: `    <article>
-      <h2>${escapeHtml(post.title)}</h2>
+    children: `    <article>
+      <h2 class="post-title">${escapeHtml(post.title)}</h2>
       <p class="muted"><time datetime="${escapeAttribute(post.date)}">${escapeHtml(formatDate(post.date))}</time></p>
 ${post.html}
     </article>`,
