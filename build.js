@@ -395,7 +395,6 @@ function layout({ title, description = site.description, showIntro = false, chil
     }
 
     article {
-      border-top: 1px solid var(--rule);
       padding-top: 36px;
     }
 
