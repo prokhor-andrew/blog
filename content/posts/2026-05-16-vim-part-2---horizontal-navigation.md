@@ -1,7 +1,7 @@
 ---
-title: Vim Part 2 - More Navigation
+title: Vim Part 2 - Horizontal Navigation
 date: 2026-05-16
-slug: vim-part-2---more-navigation
+slug: vim-part-2---horizontal-navigation
 ---
 
 In this post I will add more navigation commands. 
@@ -9,7 +9,7 @@ After trying first four basic movements, you probably realized that it is tediou
 In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.
 
 
-## Jumping Between Words
+## Jumping between words
 
 To jump between words, there are four commands to use. They are: `e`, `b`, `w`, and `ge`.
 
@@ -37,7 +37,7 @@ Let's say I am on a random word in a random position. I click `b` and immediatel
 That is because `w` guarantees to land on the next word, while `ge` guarantess to land on the previous one.
 
 
-## Jumping Within a Line
+## Jumping within a line
 
 This one is simple. To jump to the beginning of the line use `0`. To jump to the end of it use `$`. These two are used all the time by me, and worth getting comfortable with.
 

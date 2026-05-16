@@ -1,7 +1,7 @@
 ---
-title: Vim Part 1
+title: Vim Part 1 - Cursor Movement
 date: 2026-05-15
-slug: vim-part-1
+slug: vim-part-1--cursor-movement
 ---
 
 
