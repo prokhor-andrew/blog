@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vim Part 2 - More Navigation - Andrii Prokhorenko</title>
-  <meta name="description" content="In this post I will add more basic navigation commands. ">
+  <meta name="description" content="In this post I will add more navigation commands. ">
   <style>
     :root {
       color-scheme: light dark;
@@ -256,7 +256,7 @@
     <article>
       <h2 class="post-title">Vim Part 2 - More Navigation</h2>
       <p class="muted"><time datetime="2026-05-16">May 16, 2026</time></p>
-<p>In this post I will add more basic navigation commands. After trying first four basic movements, you probably realized that it is tedious to move around using the cursor. In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.</p>
+<p>In this post I will add more navigation commands. After trying first four basic movements, you probably realized that it is tedious to move around using the cursor. In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.</p>
 <h2>Jumping Between Words</h2>
 <p>To jump between words, there are four commands to use. They are: <code>e</code>, <code>b</code>, <code>w</code>, and <code>ge</code>.</p>
 <ul>
@@ -276,12 +276,11 @@
 <li><code>b</code> - jumps to the <em>first</em> letter of the current word <em>under the cursor</em>. If the letter under the cursor is already the first one, it will jump to the <em>first</em> letter of the <em>previous</em> word.</li>
 </ul>
 <p><img src="../../images/vim-part-2-img-2.png" alt="example of b operator"></p>
-<p>I use these motions to jump around the same word. Let's say I am on a random word in a random position. I click <code>b</code> and immediately get to its first letter. I click <code>e</code> and get to its last letter.</p>
-<p><code>w</code> is something I use to jump a bunch of words forward. If I miss the word I needed, I may adjust myself using <code>ge</code>.</p>
-<p>These nuances don't matter much, as there are more efficient ways of navigating. But mastering basics is still important, so ignoring the existence of said motions is not the way to move forward.</p>
+<p>To jump from the start to the end of the same word, I use <code>e</code> and <code>b</code> commands. Let's say I am on a random word in a random position. I click <code>b</code> and immediately get to its first letter. I click <code>e</code> and get to its last letter.</p>
+<p><code>w</code> is something I use to jump a bunch of words forward. If I miss the word I needed, I may adjust myself using <code>ge</code>. That is because <code>w</code> guarantees to land on the next word, while <code>ge</code> guarantess to land on the previous one.</p>
 <h2>Jumping Within a Line</h2>
 <p>This one is simple. To jump to the beginning of the line use <code>0</code>. To jump to the end of it use <code>$</code>. These two are used all the time by me, and worth getting comfortable with.</p>
-<p>Sometimes you see the character you want to reach. To jump to it, you may click <code>f</code> following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, press <code>;</code>. This will jump to the next occurance. Proceed to do this, until you reach your destination.</p>
+<p>Sometimes you see the character you want to reach. To jump to it, you may click <code>f</code> following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press <code>;</code>. This will move cursor to the next occurance. Repeat the motion, until you reach your destination.</p>
 <p>In case you jumped over the needed character, you can press <code>,</code> which will take you back to the previous occurance.</p>
 <p>This method is a better way of reaching a word/letter/character within one line, as you don't have to click as much to reach the word.</p>
 <p>Other operators worth mentioning:</p>
@@ -292,14 +291,7 @@
 </ul>
 <h2>Conclusion</h2>
 <p>At first, I wanted to add more commands and operators. But the amount of information above should be enough to leave you overwhelmed.</p>
-<p>A little summary of what to drill, and what to just touch and understand.</p>
-<p>To drill:</p>
-<ul>
-<li><code>e</code>, <code>b</code>. Abused by me to jump within a word, or within a couple of words.</li>
-<li><code>0</code>, <code>$</code>. Quick jump to the beginning or the end.</li>
-<li><code>f</code>, <code>F</code>, <code>;</code>, <code>,</code>. A good way of reaching a letter that is not around the cursor.</li>
-</ul>
-<p>The rest are not as important(imho): <code>w</code>, <code>ge</code>, <code>t</code>, <code>T</code>.</p>
+<p>Later in this series, I will try to list as many efficient navigation patterns as possible, so do not worry if something feels clumsy.</p>
 <p>Keep grinding slowly. Do not rush.</p>
     </article>
 

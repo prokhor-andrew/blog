@@ -4,7 +4,7 @@ date: 2026-05-16
 slug: vim-part-2---more-navigation
 ---
 
-In this post I will add more basic navigation commands. 
+In this post I will add more navigation commands. 
 After trying first four basic movements, you probably realized that it is tedious to move around using the cursor.
 In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.
 
@@ -30,19 +30,18 @@ This is the way to jump forward between words staying on the last letter.
 
 ![example of b operator](../images/vim-part-2-img-2.png)
 
-
-I use these motions to jump around the same word. Let's say I am on a random word in a random position. I click `b` and immediately get to its first letter. I click `e` and get to its last letter. 
+To jump from the start to the end of the same word, I use `e` and `b` commands. 
+Let's say I am on a random word in a random position. I click `b` and immediately get to its first letter. I click `e` and get to its last letter. 
 
 `w` is something I use to jump a bunch of words forward. If I miss the word I needed, I may adjust myself using `ge`. 
-
-These nuances don't matter much, as there are more efficient ways of navigating. But mastering basics is still important, so ignoring the existence of said motions is not the way to move forward.  
+That is because `w` guarantees to land on the next word, while `ge` guarantess to land on the previous one.
 
 
 ## Jumping Within a Line
 
 This one is simple. To jump to the beginning of the line use `0`. To jump to the end of it use `$`. These two are used all the time by me, and worth getting comfortable with.
 
-Sometimes you see the character you want to reach. To jump to it, you may click `f` following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, press `;`. This will jump to the next occurance. Proceed to do this, until you reach your destination.  
+Sometimes you see the character you want to reach. To jump to it, you may click `f` following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press `;`. This will move cursor to the next occurance. Repeat the motion, until you reach your destination.  
 
 In case you jumped over the needed character, you can press `,` which will take you back to the previous occurance.  
 
@@ -59,14 +58,6 @@ Other operators worth mentioning:
 
 At first, I wanted to add more commands and operators. But the amount of information above should be enough to leave you overwhelmed. 
 
-A little summary of what to drill, and what to just touch and understand.
-
-To drill: 
-- `e`, `b`. Abused by me to jump within a word, or within a couple of words.
-- `0`, `$`. Quick jump to the beginning or the end.
-- `f`, `F`, `;`, `,`. A good way of reaching a letter that is not around the cursor.
-
-The rest are not as important(imho): `w`, `ge`, `t`, `T`.
-
+Later in this series, I will try to list as many efficient navigation patterns as possible, so do not worry if something feels clumsy. 
 
 Keep grinding slowly. Do not rush.  
