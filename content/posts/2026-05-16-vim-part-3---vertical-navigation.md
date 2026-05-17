@@ -4,7 +4,8 @@ date: 2026-05-16
 slug: vim-part-3---vertical-navigation
 ---
 
-Introduction
+Vertical navigation is pretty much the same to a navigation around the file.  
+
 
 ## Top and bottom jumps 
 
@@ -37,7 +38,7 @@ When `n` is clicked in this mode, it will move backwards and upwards, while `N` 
 
 ## Conclusion
 
-rtest
+
 
 
 
