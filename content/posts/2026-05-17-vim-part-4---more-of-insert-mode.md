@@ -15,7 +15,7 @@ You could press `$` followed by `a` and that would be totally fine.
 In fact, if you feel like that is easier for you, do not even bother trying to change that.
 
 But with `A` you can achieve the same result with only one click. I would not say that it is a big optimization.  
-Nevertheless, in my experience almost always after jumping to the end of the line I am starting to type something. 
+Nevertheless, almost always after jumping to the end of the line I start to type something. 
 Because of that, I absute the crap out of `A` all the time.
 
 
