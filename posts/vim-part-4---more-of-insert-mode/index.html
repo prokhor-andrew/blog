@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vim Part 4 - More of Insert mode - Andrii Prokhorenko</title>
-  <meta name="description" content="In this post I will try to introduce four more ways to enter Insert mode that make life easier.  ">
+  <meta name="description" content="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD">
   <style>
     :root {
       color-scheme: light dark;
@@ -256,7 +256,7 @@
     <article>
       <h2 class="post-title">Vim Part 4 - More of Insert mode</h2>
       <p class="muted"><time datetime="2026-05-17">May 17, 2026</time></p>
-<p>In this post I will try to introduce four more ways to enter Insert mode that make life easier. In addition to entering Insert mode, they do it with a motion.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD In this post I will try to introduce four more ways to enter Insert mode that make life easier. ======= In this post I will try to four mode ways to enter Insert mode that make life easier. &gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main In addition to entering Insert mode, they do it with a motion.</p>
 <h2>Jump to the end of the line</h2>
 <p>Imagine you are stuck somewhere in the middle of the line and you want to jump to the end and continue typing. You could press <code>$</code> followed by <code>a</code> and that would be totally fine. In fact, if you feel like that is easier for you, do not even bother trying to change that.</p>
 <p>But with <code>A</code> you can achieve the same result with only one click. I would not say that it is a big optimization. Nevertheless, in my experience almost always after jumping to the end of the line I am starting to type something. Because of that, I absute the crap out of <code>A</code> all the time.</p>
@@ -267,7 +267,7 @@
 <p>In order to type this particular line I used it twice :)</p>
 <p>The command is <code>o</code>. It creates a new line below the line where the cursor is, moves the cursor there, and enters Insert mode.</p>
 <h2>Move the current line of the line</h2>
-<p>Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. This is an amazing command if you need to navigate inside of a paragraph and insert something new. In coding, I use it all the time after creating if-then statement like this:</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. ======= Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, created a new line in place of it, and enters Insert mode. &gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main This is an amazing command if you need to navigate inside of a paragraph and insert something new. In coding, I use it all the time after creating if-then statement like this:</p>
 <pre><code>if (true) {
 } // cursor is here</code></pre>
 <p>Then I press <code>O</code> and it becomes</p>

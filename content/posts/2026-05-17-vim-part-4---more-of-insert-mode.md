@@ -4,7 +4,11 @@ date: 2026-05-17
 slug: vim-part-4---more-of-insert-mode
 ---
 
+<<<<<<< HEAD
 In this post I will try to introduce four more ways to enter Insert mode that make life easier.  
+=======
+In this post I will try to four mode ways to enter Insert mode that make life easier.  
+>>>>>>> origin/main
 In addition to entering Insert mode, they do it with a motion.
 
 
@@ -36,7 +40,11 @@ The command is `o`. It creates a new line below the line where the cursor is, mo
 ## Move the current line of the line
 
 
+<<<<<<< HEAD
 Another beautiful command that achives almost the same as `o` is ... `O`. `O` moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. 
+=======
+Another beautiful command that achives almost the same as `o` is ... `O`. `O` moves the current line lower by 1 row, created a new line in place of it, and enters Insert mode. 
+>>>>>>> origin/main
 This is an amazing command if you need to navigate inside of a paragraph and insert something new. 
 In coding, I use it all the time after creating if-then statement like this:
 
