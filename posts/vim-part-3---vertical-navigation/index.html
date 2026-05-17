@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Posts - Andrii Prokhorenko</title>
-  <meta name="description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
-  <link rel="canonical" href="https://andriiprokhorenko.com/posts/">
+  <title>Vim Part 3 - Vertical Navigation - Andrii Prokhorenko</title>
+  <meta name="description" content="Vertical navigation is pretty much the a navigation around the file.  ">
+  <link rel="canonical" href="https://andriiprokhorenko.com/posts/vim-part-3---vertical-navigation/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://andriiprokhorenko.com/posts/">
-  <meta property="og:title" content="Posts - Andrii Prokhorenko">
-  <meta property="og:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta property="og:url" content="https://andriiprokhorenko.com/posts/vim-part-3---vertical-navigation/">
+  <meta property="og:title" content="Vim Part 3 - Vertical Navigation - Andrii Prokhorenko">
+  <meta property="og:description" content="Vertical navigation is pretty much the a navigation around the file.  ">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts - Andrii Prokhorenko">
-  <meta name="twitter:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta name="twitter:title" content="Vim Part 3 - Vertical Navigation - Andrii Prokhorenko">
+  <meta name="twitter:description" content="Vertical navigation is pretty much the a navigation around the file.  ">
   <style>
     :root {
       color-scheme: light dark;
@@ -261,32 +261,24 @@
       
     </header>
 
-    <section aria-labelledby="posts">
-      <h2 id="posts">Posts</h2>
-      <ul class="post-list">
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-4---more-of-insert-mode/">Vim Part 4 - More of Insert mode</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-3---vertical-navigation/">Vim Part 3 - Vertical Navigation</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-2---horizontal-navigation/">Vim Part 2 - Horizontal Navigation</a>
-        </li>
-        <li>
-          <time datetime="2026-05-15">May 15, 2026</time>
-          <a href="/posts/vim-part-1--cursor-movement/">Vim Part 1 - Cursor Movement</a>
-        </li>
-        <li>
-          <time datetime="2026-05-15">May 15, 2026</time>
-          <a href="/posts/vim-part-0/">Vim Part 0</a>
-        </li>
-      </ul>
-
-    </section>
+    <article>
+      <h2 class="post-title">Vim Part 3 - Vertical Navigation</h2>
+      <p class="muted"><time datetime="2026-05-16">May 16, 2026</time></p>
+<p>Vertical navigation is pretty much the a navigation around the file.</p>
+<h2>Top and bottom jumps</h2>
+<p>Let's start with something easy. <code>gg</code> will take you to the very first line. <code>G</code> will take you to the last one.</p>
+<h2>Jumping to the particular line</h2>
+<p>To jump to a concrete line, type <code>:&lt;line number&gt;</code> and it will take your cursor there.</p>
+<h2>Jumping between brackets</h2>
+<p>To jump between brackets, make sure to move your cursor to the bracket, then press <code>%</code>. If the cursor was on the opening bracket, it will take you to the closing one. If it was on the closing bracket, it will take you to the opening bracket.</p>
+<h2>Search mode</h2>
+<p>Search mode is your bread and butter. It is the fastest way to reach to a particular word around the file without any mental overhead(with the only exception of EasyMotions).</p>
+<p>To do that, start by entering search mode with <code>/</code>, then proceed to type your query. With a proper configuration, the editor will highlight all the words that match your searched expression. Once you are done typing, click <code>Enter</code>. This will either take you to the closest matching value on the same line your cursor is on, or it will take you to the first value in the file. From there, you can move around results via <code>n</code> or <code>N</code>. <code>n</code> will take you to the next result, while <code>N</code> will do the opposite.</p>
+<p>There is another way to enter search mode - <code>?</code>. This will start the search in opposite direction. In this mode, <code>n</code> moves left and up, while <code>N</code> moves right and down.</p>
+<h2>Conclusion</h2>
+<p>As I am trying to keep these simple and progressively make them harder, some of the options above are not the best ways to navigate around. Right now, the focus is on presenting the basics. Later, I will have a compliation of drills with minimal set of the most useful motions and how to use them.</p>
+<p>There is one thing I briefly mentioned in this blog post, and that is EasyMotions. It is supposed to be a plugin that allows an even easier navigation around the editor. I haven't tried it yet, but I am planning to. As soon as I get my hands on it, I will make sure to carefully analyze my experience with a detailed summary here.</p>
+    </article>
 
     <footer>
       <p>&copy; 2026 Andrii Prokhorenko.</p>
