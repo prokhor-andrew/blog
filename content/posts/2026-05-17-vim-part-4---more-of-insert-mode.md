@@ -1,14 +1,14 @@
 ---
-title: Vim Part 4 - More of insert mode
+title: Vim Part 4 - More of Insert mode
 date: 2026-05-17
 slug: vim-part-4---more-of-insert-mode
 ---
 
-In this post I will try to four mode ways to enter Insert mode that make life easier.  
-In addition to entering insert mode, they do it with a motion.
+In this post I will try to introduce four more ways to enter Insert mode that make life easier.  
+In addition to entering Insert mode, they do it with a motion.
 
 
-## Jump to the end
+## Jump to the end of the line
 
 Imagine you are stuck somewhere in the middle of the line and you want to jump to the end and continue typing. 
 You could press `$` followed by `a` and that would be totally fine. 
@@ -19,24 +19,24 @@ Nevertheless, in my experience almost always after jumping to the end of the lin
 Because of that, I absute the crap out of `A` all the time.
 
 
-## Jump the the beginning 
+## Jump the the beginning of the line
 
 Just like you can jump straight to the end of the line, you can jump to the beginning by pressing `I`. 
 
 
-## Jump to the new line
+## Jump to the new line of the line
 
-This particular command is, in my opinion, the MVP of vim. I use it literally all the time.  
+This command is, in my opinion, the MVP of Vim. I use it literally all the time.  
 
-To type this particular line I used it twice :)
+In order to type this particular line I used it twice :)
 
 The command is `o`. It creates a new line below the line where the cursor is, moves the cursor there, and enters Insert mode.
 
 
-## Move the current line
+## Move the current line of the line
 
 
-Another beautiful command that achives almost the same as `o` is ... `O`. `O` moves the current line lower by 1 row, created a new line in place of it, and enters the insert mode. 
+Another beautiful command that achives almost the same as `o` is ... `O`. `O` moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. 
 This is an amazing command if you need to navigate inside of a paragraph and insert something new. 
 In coding, I use it all the time after creating if-then statement like this:
 
@@ -55,7 +55,7 @@ if (true) {
 } 
 ```
 
-This can be applied to creating functions, classes and anything else with brackets.
+This can be applied to creating functions, classes, and anything else with brackets.
 
 
 ## Conclusion
