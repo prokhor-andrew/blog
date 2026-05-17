@@ -4,6 +4,7 @@ const path = require("node:path");
 const site = {
   title: "Andrii Prokhorenko",
   description: "I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.",
+  url: "https://andriiprokhorenko.com",
   author: "Andrii Prokhorenko",
   emailUser: "prokhor.andrew",
   emailDomain: "gmail.com",
@@ -35,6 +36,10 @@ function slugify(value) {
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function absoluteUrl(pathname = "/") {
+  return new URL(pathname, site.url).href;
 }
 
 function parseFrontMatter(source, filePath) {
@@ -215,8 +220,9 @@ function readPosts() {
     ));
 }
 
-function layout({ title, description = site.description, showIntro = false, children }) {
+function layout({ title, description = site.description, pathname = "/", showIntro = false, children }) {
   const pageTitle = title === site.title ? site.title : `${title} - ${site.title}`;
+  const pageUrl = absoluteUrl(pathname);
 
   return `<!doctype html>
 <html lang="en">
@@ -225,6 +231,14 @@ function layout({ title, description = site.description, showIntro = false, chil
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(pageTitle)}</title>
   <meta name="description" content="${escapeAttribute(description)}">
+  <link rel="canonical" href="${escapeAttribute(pageUrl)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${escapeAttribute(pageUrl)}">
+  <meta property="og:title" content="${escapeAttribute(pageTitle)}">
+  <meta property="og:description" content="${escapeAttribute(description)}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="${escapeAttribute(pageTitle)}">
+  <meta name="twitter:description" content="${escapeAttribute(description)}">
   <style>
     :root {
       color-scheme: light dark;
@@ -592,6 +606,7 @@ function buildIndex(posts) {
 function buildContactsPage() {
   const html = layout({
     title: "Contacts",
+    pathname: "/contacts/",
     children: `    <section aria-labelledby="contacts">
       <h2 id="contacts">Contacts</h2>
       ${contactTable()}
@@ -606,6 +621,7 @@ function buildPostPages(posts) {
     const html = layout({
       title: post.title,
       description: post.body.split("\n").find(Boolean) || site.description,
+      pathname: `/posts/${post.slug}/`,
     children: `    <article>
       <h2 class="post-title">${escapeHtml(post.title)}</h2>
       <p class="muted"><time datetime="${escapeAttribute(post.date)}">${escapeHtml(formatDate(post.date))}</time></p>
@@ -626,6 +642,7 @@ function buildArchive(posts) {
     const pageTitle = page === 1 ? "Posts" : `Posts, page ${page}`;
     const html = layout({
       title: pageTitle,
+      pathname: page === 1 ? "/posts/" : `/posts/page/${page}/`,
       children: `    <section aria-labelledby="posts">
       <h2 id="posts">${escapeHtml(pageTitle)}</h2>
       ${postList(pagePosts)}
