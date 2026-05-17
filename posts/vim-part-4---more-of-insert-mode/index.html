@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Posts - Andrii Prokhorenko</title>
-  <meta name="description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <title>Vim Part 4 - More of insert mode - Andrii Prokhorenko</title>
+  <meta name="description" content="In this post I will try to four mode ways to enter Insert mode that make life easier.  ">
   <style>
     :root {
       color-scheme: light dark;
@@ -253,28 +253,32 @@
       
     </header>
 
-    <section aria-labelledby="posts">
-      <h2 id="posts">Posts</h2>
-      <ul class="post-list">
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-4---more-of-insert-mode/">Vim Part 4 - More of insert mode</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-2---horizontal-navigation/">Vim Part 2 - Horizontal Navigation</a>
-        </li>
-        <li>
-          <time datetime="2026-05-15">May 15, 2026</time>
-          <a href="/posts/vim-part-1--cursor-movement/">Vim Part 1 - Cursor Movement</a>
-        </li>
-        <li>
-          <time datetime="2026-05-15">May 15, 2026</time>
-          <a href="/posts/vim-part-0/">Vim Part 0</a>
-        </li>
-      </ul>
-
-    </section>
+    <article>
+      <h2 class="post-title">Vim Part 4 - More of insert mode</h2>
+      <p class="muted"><time datetime="2026-05-17">May 17, 2026</time></p>
+<p>In this post I will try to four mode ways to enter Insert mode that make life easier. In addition to entering insert mode, they do it with a motion.</p>
+<h2>Jump to the end</h2>
+<p>Imagine you are stuck somewhere in the middle of the line and you want to jump to the end and continue typing. You could press <code>$</code> followed by <code>a</code> and that would be totally fine. In fact, if you feel like that is easier for you, do not even bother trying to change that.</p>
+<p>But with <code>A</code> you can achieve the same result with only one click. I would not say that it is a big optimization. Nevertheless, in my experience almost always after jumping to the end of the line I am starting to type something. Because of that, I absute the crap out of <code>A</code> all the time.</p>
+<h2>Jump the the beginning</h2>
+<p>Just like you can jump straight to the end of the line, you can jump to the beginning by pressing <code>I</code>.</p>
+<h2>Jump to the new line</h2>
+<p>This particular command is, in my opinion, the MVP of vim. I use it literally all the time.</p>
+<p>To type this particular line I used it twice :)</p>
+<p>The command is <code>o</code>. It creates a new line below the line where the cursor is, moves the cursor there, and enters Insert mode.</p>
+<h2>Move the current line</h2>
+<p>Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, created a new line in place of it, and enters the insert mode. This is an amazing command if you need to navigate inside of a paragraph and insert something new. In coding, I use it all the time after creating if-then statement like this:</p>
+<pre><code>if (true) {
+} // cursor is here</code></pre>
+<p>Then I press <code>O</code> and it becomes</p>
+<pre><code>if (true) {
+    // cursor is here
+} </code></pre>
+<p>This can be applied to creating functions, classes and anything else with brackets.</p>
+<h2>Conclusion</h2>
+<p>For now, I wanted to add these tools to navigate and enter Insert mode. They may seem useless at first. As <code>i</code> and <code>a</code> combined with motions achieve the same. But after a bit of practice, you will surely notice how many times you would need them.</p>
+<p>Whenever you need to use <code>0</code> or <code>$</code>, stop yourself for a second, and think if <code>I</code> or <code>A</code> could be used instead. Thinking like this is not what you want to do during coding. But I am encouraging you to experiment and see, if it works for you or not.</p>
+    </article>
 
     <footer>
       <p>&copy; 2026 Andrii Prokhorenko.</p>
