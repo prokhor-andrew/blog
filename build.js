@@ -11,7 +11,7 @@ const site = {
   linkedin: "https://www.linkedin.com/in/andrii-prokhorenko-990b5114a/",
   github: "https://github.com/prokhor-andrew",
   postsPerPage: 5,
-  postsIntro: "These posts are about anything and everyting I know or don't know. This blog sole purpose is to store the structure of what is in my head. This is my knowledge base. If you, my reader, disagree or find mistakes, feel free to email me and share your ideas. I am open to learning.",
+  postsIntro: "These posts are about anything and everyting I know or don't know. This blog's sole purpose is to store the structure of what is in my head. This is my knowledge base. If you, my reader, disagree or find mistakes, feel free to email me and share your ideas. I am open to learning.",
 };
 
 const rootDir = __dirname;
@@ -221,7 +221,7 @@ function readPosts() {
     ));
 }
 
-function layout({ title, description = site.description, pathname = "/", showIntro = false, children }) {
+function layout({ title, description = site.description, pathname = "/", showIntro = false, pageIntro = "", children }) {
   const pageTitle = title === site.title ? site.title : `${title} - ${site.title}`;
   const pageUrl = absoluteUrl(pathname);
 
@@ -346,6 +346,7 @@ function layout({ title, description = site.description, pathname = "/", showInt
       color: var(--muted);
       font-size: 17px;
     }
+
 
     .visually-hidden {
       position: absolute;
@@ -512,6 +513,7 @@ function layout({ title, description = site.description, pathname = "/", showInt
         <a href="/contacts/">Contacts</a>
       </nav>
       ${showIntro ? `<p class="intro">${escapeHtml(site.description)}</p>` : ""}
+      ${pageIntro ? `<p class="intro">${escapeHtml(pageIntro)}</p>` : ""}
     </header>
 
 ${children}
@@ -687,9 +689,9 @@ function buildArchive(posts) {
     const html = layout({
       title: pageTitle,
       pathname: page === 1 ? "/posts/" : `/posts/page/${page}/`,
+      pageIntro: site.postsIntro,
       children: `    <section aria-labelledby="posts">
       <h2 id="posts">${escapeHtml(pageTitle)}</h2>
-      ${page === 1 ? `<p class="intro">${escapeHtml(site.postsIntro)}</p>` : ""}
       ${postList(pagePosts)}
 ${pagination({ page, totalPages })}
     </section>`,
