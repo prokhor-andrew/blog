@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Posts - Andrii Prokhorenko</title>
-  <meta name="description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
-  <link rel="canonical" href="https://andriiprokhorenko.com/posts/">
+  <title>Vim Part 5 - Scrolling - Andrii Prokhorenko</title>
+  <meta name="description" content="Vertical navigation exists when you need to move your cursor to ">
+  <link rel="canonical" href="https://andriiprokhorenko.com/posts/vim-part-5---scrolling/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://andriiprokhorenko.com/posts/">
-  <meta property="og:title" content="Posts - Andrii Prokhorenko">
-  <meta property="og:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta property="og:url" content="https://andriiprokhorenko.com/posts/vim-part-5---scrolling/">
+  <meta property="og:title" content="Vim Part 5 - Scrolling - Andrii Prokhorenko">
+  <meta property="og:description" content="Vertical navigation exists when you need to move your cursor to ">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts - Andrii Prokhorenko">
-  <meta name="twitter:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta name="twitter:title" content="Vim Part 5 - Scrolling - Andrii Prokhorenko">
+  <meta name="twitter:description" content="Vertical navigation exists when you need to move your cursor to ">
   <style>
     :root {
       color-scheme: light dark;
@@ -261,35 +261,41 @@
       
     </header>
 
-    <section aria-labelledby="posts">
-      <h2 id="posts">Posts</h2>
-      <ul class="post-list">
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-5---scrolling/">Vim Part 5 - Scrolling</a>
-        </li>
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-4---more-of-insert-mode/">Vim Part 4 - More of Insert mode</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-3---vertical-navigation/">Vim Part 3 - Vertical Navigation</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-2---horizontal-navigation/">Vim Part 2 - Horizontal Navigation</a>
-        </li>
-        <li>
-          <time datetime="2026-05-15">May 15, 2026</time>
-          <a href="/posts/vim-part-1--cursor-movement/">Vim Part 1 - Cursor Movement</a>
-        </li>
-      </ul>
-      <nav class="pagination" aria-label="Pagination">
-        <span></span>
-        <a href="/posts/page/2/">Older posts</a>
-      </nav>
-    </section>
+    <article>
+      <h2 class="post-title">Vim Part 5 - Scrolling</h2>
+      <p class="muted"><time datetime="2026-05-17">May 17, 2026</time></p>
+<p>Vertical navigation exists when you need to move your cursor to a line or a character. Sometimes you just want to quickly scan the text with your eyes from top to bottom without the cursor being involved.</p>
+<h2>Scrolling half a screen</h2>
+<p>To scroll up half a screen, hold <code>Ctrl</code> and press <code>u</code>.</p>
+<p>To do the same but down, hold <code>Ctrl</code> and press <code>d</code>.</p>
+<p>Should be pretty intuitive!</p>
+<h2>Scrolling one full screen</h2>
+<p>To scroll up full screen, hold <code>Ctrl</code> and press <code>b</code>.</p>
+<p>To scroll down full screen, hold <code>Ctrl</code> and press <code>f</code>.</p>
+<h2>Repositioning view port around the cursor</h2>
+<p>There are three commands in Vim that move the cursor around the viewport.</p>
+<ul>
+<li><code>H</code> moves the cursor to the first visible line.</li>
+<li><code>M</code> moves the cursor to the central visible line.</li>
+<li><code>L</code> moves the cursor to the last visible line.</li>
+</ul>
+<p>Combined with <code>zt</code>, <code>zz</code>, and <code>zb</code> we can even get something close to a scrolling behavior.</p>
+<ul>
+<li><code>zt</code> takes the current line and makes it the first visible one.</li>
+<li><code>zz</code> takes the current line and makes it the central visible one.</li>
+<li><code>zb</code> takes the current line and makes it the last visible on.</li>
+</ul>
+<h2>Animation issue</h2>
+<p>By default, there is no scrolling animation in Vim. But there are plugins that allow to do that.</p>
+<p>For vanilla Vim, sexy_scroller.vim should suffice. I have never used it, so tread with caution.</p>
+<p>For Neovim I use neoscroll.nvim plugin.</p>
+<p>I would not focus on these until you actively start using Vim with no problem. I haven't talked about how to configure plugins yet, and it can quickly become overwhelming.</p>
+<h2>Conclusion</h2>
+<p>At first I treated scrolling as something not that important. After a while I realized, that the majority of my time is spent browsing around looking through code, and it was very hard to do that without these motions. I do strongly recommend to install plugins for smooth scroll. There is something with us humans that needs this smoothness.</p>
+<p>Whenever we clearly see the destination we need to land on, we don't care about animation. You lock your eyes on it, hit the shorcut and you are there.</p>
+<p>But whenever we browse without our eyes, it is important to avoid screen jumps, as they increase mental overhead.</p>
+<p>But that is just my opinion.</p>
+    </article>
 
     <footer>
       <p>&copy; 2026 Andrii Prokhorenko.</p>
