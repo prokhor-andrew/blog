@@ -436,11 +436,37 @@ function layout({ title, description = site.description, pathname = "/", showInt
 
     .pagination {
       display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      border-top: 1px solid var(--rule);
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
       margin-top: 44px;
-      padding-top: 20px;
+    }
+
+    .pagination-page {
+      min-width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .pagination-current {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .pagination-ellipsis {
+      min-width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 16px;
     }
 
     .post-title {
@@ -547,15 +573,32 @@ function contactTable() {
       </table>`;
 }
 
+function pageUrl(p) {
+  return p === 1 ? "/posts/" : `/posts/page/${p}/`;
+}
+
 function pagination({ page, totalPages }) {
   if (totalPages <= 1) return "";
 
-  const previous = page === 2 ? "/posts/" : `/posts/page/${page - 1}/`;
-  const next = `/posts/page/${page + 1}/`;
+  const candidates = new Set([1, totalPages, page - 1, page, page + 1]);
+  const pages = [...candidates]
+    .filter(p => p >= 1 && p <= totalPages)
+    .sort((a, b) => a - b);
+
+  const items = [];
+  for (let i = 0; i < pages.length; i++) {
+    if (i > 0 && pages[i] - pages[i - 1] > 1) {
+      items.push(`<span class="pagination-ellipsis">…</span>`);
+    }
+    if (pages[i] === page) {
+      items.push(`<span class="pagination-page pagination-current" aria-current="page">${pages[i]}</span>`);
+    } else {
+      items.push(`<a class="pagination-page" href="${pageUrl(pages[i])}">${pages[i]}</a>`);
+    }
+  }
 
   return `      <nav class="pagination" aria-label="Pagination">
-        ${page > 1 ? `<a href="${previous}">Newer posts</a>` : "<span></span>"}
-        ${page < totalPages ? `<a href="${next}">Older posts</a>` : "<span></span>"}
+        ${items.join("\n        ")}
       </nav>`;
 }
 
@@ -639,7 +682,7 @@ function buildArchive(posts) {
   for (let page = 1; page <= totalPages; page += 1) {
     const start = (page - 1) * site.postsPerPage;
     const pagePosts = posts.slice(start, start + site.postsPerPage);
-    const pageTitle = page === 1 ? "Posts" : `Posts, page ${page}`;
+    const pageTitle = "Posts";
     const html = layout({
       title: pageTitle,
       pathname: page === 1 ? "/posts/" : `/posts/page/${page}/`,
