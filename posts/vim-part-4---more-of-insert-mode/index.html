@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vim Part 4 - More of Insert mode - Andrii Prokhorenko</title>
-  <meta name="description" content="In this post I will try to introduce four more ways to enter Insert mode that make life easier.  ">
+  <meta name="description" content="In this post I will try to introduce four more ways to enter Insert mode that will make your life easier.  ">
   <link rel="canonical" href="https://andriiprokhorenko.com/posts/vim-part-4---more-of-insert-mode/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://andriiprokhorenko.com/posts/vim-part-4---more-of-insert-mode/">
   <meta property="og:title" content="Vim Part 4 - More of Insert mode - Andrii Prokhorenko">
-  <meta property="og:description" content="In this post I will try to introduce four more ways to enter Insert mode that make life easier.  ">
+  <meta property="og:description" content="In this post I will try to introduce four more ways to enter Insert mode that will make your life easier.  ">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Vim Part 4 - More of Insert mode - Andrii Prokhorenko">
-  <meta name="twitter:description" content="In this post I will try to introduce four more ways to enter Insert mode that make life easier.  ">
+  <meta name="twitter:description" content="In this post I will try to introduce four more ways to enter Insert mode that will make your life easier.  ">
   <style>
     :root {
       color-scheme: light dark;
@@ -292,27 +292,27 @@
     <article>
       <h2 class="post-title">Vim Part 4 - More of Insert mode</h2>
       <p class="muted"><time datetime="2026-05-17">May 17, 2026</time></p>
-<p>In this post I will try to introduce four more ways to enter Insert mode that make life easier. In addition to entering Insert mode, they do it with a motion.</p>
-<h2>Jump to the end of the line</h2>
-<p>Imagine you are stuck somewhere in the middle of the line and you want to jump to the end and continue typing. You could press <code>$</code> followed by <code>a</code> and that would be totally fine. In fact, if you feel like that is easier for you, do not even bother trying to change that.</p>
-<p>But with <code>A</code> you can achieve the same result with only one click. I would not say that it is a big optimization. Nevertheless, almost always after jumping to the end of the line I start to type something. Because of that, I absute the crap out of <code>A</code> all the time.</p>
-<h2>Jump the the beginning of the line</h2>
-<p>Just like you can jump straight to the end of the line, you can jump to the beginning by pressing <code>I</code>.</p>
-<h2>Jump to the new line of the line</h2>
-<p>This command is, in my opinion, the MVP of Vim. I use it literally all the time.</p>
+<p>In this post I will try to introduce four more ways to enter Insert mode that will make your life easier. In addition to entering Insert mode, they do it with a motion.</p>
+<h2>Jump to the end of a line</h2>
+<p>Imagine you are stuck somewhere in the middle of a line and you want to jump to the end and continue typing. You could press <code>$</code> followed by <code>a</code> and that would be totally fine. In fact, if you feel like that is easier for you, do not even bother trying to change that.</p>
+<p>But with <code>A</code> you can achieve the same result with only one click. Not only that, but reaching <code>$</code> may seem akward to some of you.</p>
+<p>I would not say that it is a big optimization. Nevertheless, almost every time after jumping to the end of the line I start typing. Because of that, I absute the crap out of <code>A</code> all the time.</p>
+<h2>Jump to the beginning of a line</h2>
+<p>Just like you can jump straight to the end of a line, you can jump to the beginning by pressing <code>I</code>.</p>
+<h2>Jump to a new line</h2>
+<p>This command is, in my opinion, the MVP of Vim. I use it more than any other command from my arsenal.</p>
 <p>In order to type this particular line I used it twice :)</p>
 <p>The command is <code>o</code>. It creates a new line below the line where the cursor is, moves the cursor there, and enters Insert mode.</p>
-<h2>Move the current line of the line</h2>
-<p>Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. This is an amazing command if you need to navigate inside of a paragraph and insert something new. In coding, I use it all the time after creating if-then statement like this:</p>
+<h2>Move the current line and create a new one</h2>
+<p>Another beautiful command that achives almost the same as <code>o</code> is ... <code>O</code>. <code>O</code> moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. This is an amazing command if you need to squeeze something in between the lines. In coding, I use it all the time after creating if-then statement like this:</p>
 <pre><code>if (true) {
 } // cursor is here</code></pre>
 <p>Then I press <code>O</code> and it becomes</p>
 <pre><code>if (true) {
     // cursor is here
 } </code></pre>
-<p>This can be applied to creating functions, classes, and anything else with brackets.</p>
+<p>This can be applied to creating functions, classes, and anything else with brackets or scopes.</p>
 <h2>Conclusion</h2>
-<p>For now, I wanted to add these tools to navigate and enter Insert mode. They may seem useless at first. As <code>i</code> and <code>a</code> combined with motions achieve the same. But after a bit of practice, you will surely notice how many times you would need them.</p>
 <p>Whenever you need to use <code>0</code> or <code>$</code>, stop yourself for a second, and think if <code>I</code> or <code>A</code> could be used instead. Thinking like this is not what you want to do during coding. But I am encouraging you to experiment and see, if it works for you or not.</p>
     </article>
 

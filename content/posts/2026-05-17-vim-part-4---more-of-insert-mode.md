@@ -4,40 +4,42 @@ date: 2026-05-17
 slug: vim-part-4---more-of-insert-mode
 ---
 
-In this post I will try to introduce four more ways to enter Insert mode that make life easier.  
+In this post I will try to introduce four more ways to enter Insert mode that will make your life easier.  
 In addition to entering Insert mode, they do it with a motion.
 
 
-## Jump to the end of the line
+## Jump to the end of a line
 
-Imagine you are stuck somewhere in the middle of the line and you want to jump to the end and continue typing. 
+Imagine you are stuck somewhere in the middle of a line and you want to jump to the end and continue typing. 
 You could press `$` followed by `a` and that would be totally fine. 
 In fact, if you feel like that is easier for you, do not even bother trying to change that.
 
-But with `A` you can achieve the same result with only one click. I would not say that it is a big optimization.  
-Nevertheless, almost always after jumping to the end of the line I start to type something. 
+But with `A` you can achieve the same result with only one click. Not only that, but reaching `$` may seem akward to some of you. 
+
+I would not say that it is a big optimization.  
+Nevertheless, almost every time after jumping to the end of the line I start typing. 
 Because of that, I absute the crap out of `A` all the time.
 
 
-## Jump the the beginning of the line
+## Jump to the beginning of a line
 
-Just like you can jump straight to the end of the line, you can jump to the beginning by pressing `I`. 
+Just like you can jump straight to the end of a line, you can jump to the beginning by pressing `I`. 
 
 
-## Jump to the new line of the line
+## Jump to a new line 
 
-This command is, in my opinion, the MVP of Vim. I use it literally all the time.  
+This command is, in my opinion, the MVP of Vim. I use it more than any other command from my arsenal. 
 
 In order to type this particular line I used it twice :)
 
 The command is `o`. It creates a new line below the line where the cursor is, moves the cursor there, and enters Insert mode.
 
 
-## Move the current line of the line
+## Move the current line and create a new one 
 
 
 Another beautiful command that achives almost the same as `o` is ... `O`. `O` moves the current line lower by 1 row, creates a new line in place of it, and enters Insert mode. 
-This is an amazing command if you need to navigate inside of a paragraph and insert something new. 
+This is an amazing command if you need to squeeze something in between the lines.  
 In coding, I use it all the time after creating if-then statement like this:
 
 
@@ -55,13 +57,10 @@ if (true) {
 } 
 ```
 
-This can be applied to creating functions, classes, and anything else with brackets.
+This can be applied to creating functions, classes, and anything else with brackets or scopes.
 
 
 ## Conclusion
-
-For now, I wanted to add these tools to navigate and enter Insert mode. They may seem useless at first. As `i` and `a` combined with motions achieve the same. 
-But after a bit of practice, you will surely notice how many times you would need them.
 
 Whenever you need to use `0` or `$`, stop yourself for a second, and think if `I` or `A` could be used instead.  
 Thinking like this is not what you want to do during coding. But I am encouraging you to experiment and see, if it works for you or not. 
