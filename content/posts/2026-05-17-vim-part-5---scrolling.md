@@ -7,7 +7,7 @@ slug: vim-part-5---scrolling
 
 Vertical navigation exists when you need to move your cursor to 
 a line or a character.
-Sometimes you just want to quickly scan the text with your eyes from top to bottom without the cursor being involved.
+Sometimes there is a need in quickly scanning the text with your eyes from the top to the bottom without the cursor being involved.
 
 
 ## Scrolling half a screen
@@ -44,22 +44,20 @@ Combined with `zt`, `zz`, and `zb` we can even get something close to a scrollin
 ## Animation issue
 
 
-By default, there is no scrolling animation in Vim. But there are plugins that allow to do that. 
+By default, there is no scrolling animation in Vim. But there are plugins that allow you to do that. 
 
 For vanilla Vim, sexy_scroller.vim should suffice. I have never used it, so tread with caution.
 
 For Neovim I use neoscroll.nvim plugin. 
 
-I would not focus on these until you actively start using Vim with no problem. I haven't talked about how to configure plugins yet, and it can quickly become overwhelming.   
-
+I would not focus on these until you actively start using Vim without issues. I haven't talked about how to configure plugins yet, and it can quickly become overwhelming.   
 
 ## Conclusion
 
-At first I treated scrolling as something not that important. After a while I realized, that the majority of my time is spent browsing around looking through code, and it was very hard to do that without these motions.
-I do strongly recommend to install plugins for smooth scroll. There is something with us humans that needs this smoothness. 
+At first I treated scrolling as something not that important. After a while I realized, that the majority of my time is spent looking through hundreds lines of code, and there was no sane way of moving around vertically without pain. 
 
-Whenever we clearly see the destination we need to land on, we don't care about animation. You lock your eyes on it, hit the shorcut and you are there.
+Also, I do strongly recommend to install a plugin for a smooth scroll behavior. Our eyes are very good at tracking objects moving in space. But take those objects, teleport them, and suddenly something feels off. 
 
-But whenever we browse without our eyes, it is important to avoid screen jumps, as they increase mental overhead.
+Whenever we clearly see the destination we need to land on, we don't care about animation. You lock your eyes on it, hit the navigation shorcut and you are there.
 
-But that is just my opinion.
+But whenever we browse with our eyes, it is important to avoid screen jumps, as they increase mental overhead.
