@@ -5,7 +5,7 @@ slug: vim-part-1--cursor-movement
 ---
 
 
-In this little post, I will focus on vim modes, basic navigation, and the commands that enable character modifications. 
+In this little post, I will focus on Vim modes, basic navigation, and the commands that enable character modifications. 
 
 
 ## Main modes   
@@ -19,46 +19,46 @@ We will get to the other modes later.
 
 "Mode based" means one key may do different things depending on the state of the editor.      
 
-In normal mode, `x` when clicked will remove the character under the cursor.
+In Normal mode, `x` when clicked will remove the character under the cursor.
 
-In insert mode, the same key will print letter 'x' just like in any text editor.
+In Insert mode, the same key will print a letter 'x' just like in any text editor.
 
 
 ## Switching modes
 
-Normal mode is usually the starting point of vim navigation. 
+Normal mode is usually the starting point of Vim navigation. 
 
-To enter the insert mode, press `i`. This will move the cursor to the left of the selected character. 
+To enter Insert mode, press `i`. This will move the cursor to the left of the selected character. 
 
-To get back to the normal mode, press `Esc`. It is a bit akward to reach it with the left pinky. That is why other key is usually remapped to it.
+To get back to Normal mode, press `Esc`. It is a bit akward to reach it with the left pinky. That is why another key is usually remapped to it.
 I use `Caps Lock` as my `Esc` button.
 
-To enter the insert mode but with the cursor to the right, press `a`. 
+To enter Insert mode but with the cursor to the right, press `a`. 
 
 
 ## Weird cursor
 
-In vim, the cursor does not usually lie between characters like in any common editor. At least not in normal mode. 
+In Vim, the cursor does not usually lie between characters like in any common editor. At least not in Normal mode. 
 
-The reason for that is we usually execute commands on characters, and not type the text. 
+The reason for that is we usually execute commands on characters, and not type text. 
 
-As soon as we enter insert mode, the cursor switches to the familiar one. To indicate where the character will be inserted.
+As soon as we enter Insert mode, the cursor switches to the familiar one, indicating where the character will be inserted.
 
-I have to mention, that is not always the case, and it depends on the configuration of the editor.
+I have to mention, that it is not always the case, and it depends on the configuration of the editor.
 
 
-## How to exit vim
+## How to exit Vim
 
-I was showing a blog post to my girlfriend, and she was trying the motions herself.
+I was showing this blog post to my girlfriend, while she was trying the motions herself.
 When she was done, she asked the reasonable question:"So, how do I close this?". 
-That was a funny one.
+Classic first Vim experience. 
 
-Jokes aside, to exit vim, type `:` following with `wq`. This will save your progress and close the editor. 
+Jokes aside, to exit Vim, type `:` followed by `wq`. This will save your progress and close the editor. 
 
 
 ## Cursor movements
 
-In normal mode, clicking `h` moves the cursor one character to the left.
+In Normal mode, clicking `h` moves the cursor one character to the left.
 
 Clicking `j` moves the cursor one character to the bottom.
 
@@ -93,7 +93,7 @@ One final character modification that I use all the time is `~` which toggles th
 
 ## Conclusion 
 
-These are basics. They must be mastered. You don't have to spend hundreds of hours doing these. 
+These are the basics. They must be mastered. You don't have to spend hundreds of hours practicing. 
 
 Just be comfortable with running them slowly at first, and then faster.  
 
