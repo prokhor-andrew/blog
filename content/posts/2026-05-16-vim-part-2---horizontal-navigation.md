@@ -6,7 +6,7 @@ slug: vim-part-2---horizontal-navigation
 
 In this post I will add more navigation commands. 
 After trying first four basic movements, you probably realized that it is tedious to move around using the cursor.
-In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.
+In this post, as well as the future ones, we will be learning more efficient ways of moving around Vim.
 
 
 ## Jumping between words
@@ -18,30 +18,28 @@ This is the way to jump forward between words staying on the last letter.
 
 ![example of e operator](../images/vim-part-2-img-1.png)
 
-- `ge` - Jumps to the *last* letter of the *previous* word. A way to navigate back from a bunch of `e`s. 
+- `ge` - Jumps to the *last* letter of the *previous* word. A way to jump backwards staying on the last letter.  
 
 ![example of ge operator](../images/vim-part-2-img-4.png)
 
-- `w` - jumps to the *first* letter of the *next* word. This acts like `ge` but in a different direction.   
+- `w` - jumps to the *first* letter of the *next* word. A way to jump forward staying on the first letter. 
 
 ![example of w operator](../images/vim-part-2-img-3.png)
 
-- `b` - jumps to the *first* letter of the current word *under the cursor*. If the letter under the cursor is already the first one, it will jump to the *first* letter of the *previous* word.
+- `b` - jumps to the *first* letter of the current word *under the cursor*. If the letter under the cursor is already the first one, it will jump to the *first* letter of the *previous* word. A way to jump backwards staying on the first letter. 
 
 ![example of b operator](../images/vim-part-2-img-2.png)
 
-To jump from the start to the end of the same word, I use `e` and `b` commands. 
-Let's say I am on a random word in a random position. I click `b` and immediately get to its first letter. I click `e` and get to its last letter. 
 
-`w` is something I use to jump a bunch of words forward. If I miss the word I needed, I may adjust myself using `ge`. 
-That is because `w` guarantees to land on the next word, while `ge` guarantess to land on the previous one.
+I know that a lot of people use `w` and `b` to move between words. I prefer `e` and `b` as they seem to be the opposites of each other.
+If used in the middle of a word, they allow you to jump from the first character to the last one. It is comfortable, if you combine it with `i` to insert something before the word, or `a` to append something after it.
 
 
 ## Jumping within a line
 
-This one is simple. To jump to the beginning of the line use `0`. To jump to the end of it use `$`. These two are used all the time by me, and worth getting comfortable with.
+This one is simple. To jump to the beginning of the line use `0`. To jump to the end of it use `$`. I use these two all the time, they are surely worth getting comfortable with.
 
-Sometimes you see the character you want to reach. To jump to it, you may click `f` following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press `;`. This will move cursor to the next occurance. Repeat the motion, until you reach your destination.  
+Sometimes you see a character you want to reach. To jump to it, you may click `f` following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press `;`. This will move the cursor to the next occurance. Repeat the motion, until you reach your destination.  
 
 In case you jumped over the needed character, you can press `,` which will take you back to the previous occurance.  
 
@@ -56,7 +54,7 @@ Other operators worth mentioning:
 
 ## Conclusion
 
-At first, I wanted to add more commands and operators. But the amount of information above should be enough to leave you overwhelmed. 
+I wanted to add more commands and operators, but the amount of information above should be enough to leave you overwhelmed. 
 
 Later in this series, I will try to list as many efficient navigation patterns as possible, so do not worry if something feels clumsy. 
 

@@ -292,7 +292,7 @@
     <article>
       <h2 class="post-title">Vim Part 2 - Horizontal Navigation</h2>
       <p class="muted"><time datetime="2026-05-16">May 16, 2026</time></p>
-<p>In this post I will add more navigation commands. After trying first four basic movements, you probably realized that it is tedious to move around using the cursor. In this post, as well as the future ones, we will be learning more efficient ways of moving around vim.</p>
+<p>In this post I will add more navigation commands. After trying first four basic movements, you probably realized that it is tedious to move around using the cursor. In this post, as well as the future ones, we will be learning more efficient ways of moving around Vim.</p>
 <h2>Jumping between words</h2>
 <p>To jump between words, there are four commands to use. They are: <code>e</code>, <code>b</code>, <code>w</code>, and <code>ge</code>.</p>
 <ul>
@@ -301,22 +301,21 @@
 <p>This is the way to jump forward between words staying on the last letter.</p>
 <p><img src="../../images/vim-part-2-img-1.png" alt="example of e operator"></p>
 <ul>
-<li><code>ge</code> - Jumps to the <em>last</em> letter of the <em>previous</em> word. A way to navigate back from a bunch of <code>e</code>s.</li>
+<li><code>ge</code> - Jumps to the <em>last</em> letter of the <em>previous</em> word. A way to jump backwards staying on the last letter.</li>
 </ul>
 <p><img src="../../images/vim-part-2-img-4.png" alt="example of ge operator"></p>
 <ul>
-<li><code>w</code> - jumps to the <em>first</em> letter of the <em>next</em> word. This acts like <code>ge</code> but in a different direction.</li>
+<li><code>w</code> - jumps to the <em>first</em> letter of the <em>next</em> word. A way to jump forward staying on the first letter.</li>
 </ul>
 <p><img src="../../images/vim-part-2-img-3.png" alt="example of w operator"></p>
 <ul>
-<li><code>b</code> - jumps to the <em>first</em> letter of the current word <em>under the cursor</em>. If the letter under the cursor is already the first one, it will jump to the <em>first</em> letter of the <em>previous</em> word.</li>
+<li><code>b</code> - jumps to the <em>first</em> letter of the current word <em>under the cursor</em>. If the letter under the cursor is already the first one, it will jump to the <em>first</em> letter of the <em>previous</em> word. A way to jump backwards staying on the first letter.</li>
 </ul>
 <p><img src="../../images/vim-part-2-img-2.png" alt="example of b operator"></p>
-<p>To jump from the start to the end of the same word, I use <code>e</code> and <code>b</code> commands. Let's say I am on a random word in a random position. I click <code>b</code> and immediately get to its first letter. I click <code>e</code> and get to its last letter.</p>
-<p><code>w</code> is something I use to jump a bunch of words forward. If I miss the word I needed, I may adjust myself using <code>ge</code>. That is because <code>w</code> guarantees to land on the next word, while <code>ge</code> guarantess to land on the previous one.</p>
+<p>I know that a lot of people use <code>w</code> and <code>b</code> to move between words. I prefer <code>e</code> and <code>b</code> as they seem to be the opposites of each other. If used in the middle of a word, they allow you to jump from the first character to the last one. It is comfortable, if you combine it with <code>i</code> to insert something before the word, or <code>a</code> to append something after it.</p>
 <h2>Jumping within a line</h2>
-<p>This one is simple. To jump to the beginning of the line use <code>0</code>. To jump to the end of it use <code>$</code>. These two are used all the time by me, and worth getting comfortable with.</p>
-<p>Sometimes you see the character you want to reach. To jump to it, you may click <code>f</code> following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press <code>;</code>. This will move cursor to the next occurance. Repeat the motion, until you reach your destination.</p>
+<p>This one is simple. To jump to the beginning of the line use <code>0</code>. To jump to the end of it use <code>$</code>. I use these two all the time, they are surely worth getting comfortable with.</p>
+<p>Sometimes you see a character you want to reach. To jump to it, you may click <code>f</code> following with the target character. This will move the cursor to the first occurance within the line. If after the first jump you realize that you need to go further to the right, you press <code>;</code>. This will move the cursor to the next occurance. Repeat the motion, until you reach your destination.</p>
 <p>In case you jumped over the needed character, you can press <code>,</code> which will take you back to the previous occurance.</p>
 <p>This method is a better way of reaching a word/letter/character within one line, as you don't have to click as much to reach the word.</p>
 <p>Other operators worth mentioning:</p>
@@ -326,7 +325,7 @@
 <li><code>T</code> - acts as <code>t</code>, but jumps backwards.</li>
 </ul>
 <h2>Conclusion</h2>
-<p>At first, I wanted to add more commands and operators. But the amount of information above should be enough to leave you overwhelmed.</p>
+<p>I wanted to add more commands and operators, but the amount of information above should be enough to leave you overwhelmed.</p>
 <p>Later in this series, I will try to list as many efficient navigation patterns as possible, so do not worry if something feels clumsy.</p>
 <p>Keep grinding slowly. Do not rush.</p>
     </article>
