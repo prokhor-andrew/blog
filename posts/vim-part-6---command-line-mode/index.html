@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andrii Prokhorenko</title>
-  <meta name="description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
-  <link rel="canonical" href="https://andriiprokhorenko.com/">
+  <title>Vim Part 6 - Command line mode - Andrii Prokhorenko</title>
+  <meta name="description" content="So far we have worked with two modes: Insert mode and Normal mode.">
+  <link rel="canonical" href="https://andriiprokhorenko.com/posts/vim-part-6---command-line-mode/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://andriiprokhorenko.com/">
-  <meta property="og:title" content="Andrii Prokhorenko">
-  <meta property="og:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta property="og:url" content="https://andriiprokhorenko.com/posts/vim-part-6---command-line-mode/">
+  <meta property="og:title" content="Vim Part 6 - Command line mode - Andrii Prokhorenko">
+  <meta property="og:description" content="So far we have worked with two modes: Insert mode and Normal mode.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Andrii Prokhorenko">
-  <meta name="twitter:description" content="I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.">
+  <meta name="twitter:title" content="Vim Part 6 - Command line mode - Andrii Prokhorenko">
+  <meta name="twitter:description" content="So far we have worked with two modes: Insert mode and Normal mode.">
   <style>
     :root {
       color-scheme: light dark;
@@ -285,64 +285,41 @@
         <a href="/posts/">Posts</a>
         <a href="/contacts/">Contacts</a>
       </nav>
-      <p class="intro">I have been developing different software since 2016. Throughout my career I have worked as a native Android developer, native iOS developer, Flutter developer, and now I am primarily focused on NodeJS backend development. I am passionate about different aspects of software engineering, especially Functional Programming.</p>
+      
       
     </header>
 
-    <section aria-labelledby="posts">
-      <h2 id="posts">Last Posts</h2>
-      <ul class="post-list">
-        <li>
-          <time datetime="2026-05-20">May 20, 2026</time>
-          <a href="/posts/vim-part-6---command-line-mode/">Vim Part 6 - Command line mode</a>
-        </li>
-        <li>
-          <time datetime="2026-05-19">May 19, 2026</time>
-          <a href="/posts/how-to-install-software/">How to install software</a>
-        </li>
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-5---scrolling/">Vim Part 5 - Scrolling</a>
-        </li>
-        <li>
-          <time datetime="2026-05-17">May 17, 2026</time>
-          <a href="/posts/vim-part-4---more-of-insert-mode/">Vim Part 4 - More of Insert mode</a>
-        </li>
-        <li>
-          <time datetime="2026-05-16">May 16, 2026</time>
-          <a href="/posts/vim-part-3---vertical-navigation/">Vim Part 3 - Vertical Navigation</a>
-        </li>
-      </ul>
-      <a class="more-link" href="/posts/">more</a>
-    </section>
-
-    <section aria-labelledby="contacts">
-      <h2 id="contacts">Contacts</h2>
-      <table class="contact-table">
-        <tbody>
-          <tr>
-            <th scope="row">Email</th>
-            <td><span class="contact-link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 6.5h16v11H4z"/>
-      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.5 7 7.5 6 7.5-6"/>
-    </svg>prokhor.andrew[at]gmail[dot]com</span></td>
-          </tr>
-          <tr>
-            <th scope="row">LinkedIn</th>
-            <td><a class="contact-link" href="https://www.linkedin.com/in/andrii-prokhorenko-990b5114a/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <rect x="4" y="4" width="16" height="16" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path fill="currentColor" d="M7.4 10h2.1v7H7.4zm1.1-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM11 10h2v1c.4-.7 1.2-1.2 2.3-1.2 1.8 0 3 1.2 3 3.5V17h-2.1v-3.5c0-1.1-.5-1.7-1.4-1.7s-1.6.6-1.6 1.8V17H11z"/>
-    </svg>andrii-prokhorenko</a></td>
-          </tr>
-          <tr>
-            <th scope="row">GitHub</th>
-            <td><a class="contact-link" href="https://github.com/prokhor-andrew"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 19.3c-4 .9-4-2-5.6-2.4M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.8-1.4 5.8-6.2 0-1.4-.5-2.5-1.3-3.4.1-.3.6-1.7-.1-3.4 0 0-1.1-.3-3.5 1.3A12 12 0 0 0 9 3.8C6.6 2.2 5.5 2.5 5.5 2.5c-.7 1.7-.2 3.1-.1 3.4-.8.9-1.3 2-1.3 3.4 0 4.8 3 5.9 5.8 6.2-.4.4-.6.9-.6 1.7V21"/>
-    </svg>prokhor-andrew</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <article>
+      <h2 class="post-title">Vim Part 6 - Command line mode</h2>
+      <p class="muted"><time datetime="2026-05-20">May 20, 2026</time></p>
+<p>So far we have worked with two modes: Insert mode and Normal mode.</p>
+<p>There are more modes to Vim:</p>
+<ul>
+<li>Visual mode</li>
+<li>Visual line mode</li>
+<li>Visual block mode</li>
+<li>Search mode (We briefly touched that in vertical navigation block)</li>
+<li>Replace mode</li>
+<li>Command line mode</li>
+</ul>
+<p>Today we are talking about the latter one.</p>
+<h2>Disclaimer</h2>
+<p>I am still learning this, and these posts are my way to solidfy my understanding and knowledge. Command line mode is something I am currently actively learning, and because of that, some information here may not be accurate.</p>
+<h2>Why we need it</h2>
+<p>Command line mode allows you to execute Vim and shell commands without leaving your editor.</p>
+<p>In the first blog post &quot;Vim Part 1&quot;, we entered this mode to run <code>wq</code> command and close Vim.</p>
+<h2>How to use it</h2>
+<p>In normal mode, start typing <code>:</code> and you will see a command line appearing at the bottom.</p>
+<p>There you can type in different commands like:</p>
+<ul>
+<li><code>w</code> to save (write);</li>
+<li><code>q</code> to quit;</li>
+<li><code>q!</code> to quit without saving;</li>
+</ul>
+<p>These are commands that you will be using the most.</p>
+<h2>TBDL</h2>
+<p>I am not good at command line. I am still learning. I wanted to post this to save something I already know. Even though it is not much, I will be definitely be updating this blog post in the future.</p>
+    </article>
 
     <footer>
       <p>&copy; 2026 Andrii Prokhorenko.</p>
