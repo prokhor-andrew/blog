@@ -36,7 +36,8 @@ I am not sure if this can be called a vertical navigation. But still, there is a
 
 In addition to jumping between words and sentences, Vim allows you to jump between paragraphs.
 
-To jump to the beginning of the next paragraph press `}`. To jump to the beginning of the previous paragraph use `{`.
+- To jump to the beginning of the next paragraph press `}`. 
+- To jump to the beginning of the previous paragraph use `{`.
 
 
 ## Search mode
