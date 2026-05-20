@@ -26,6 +26,11 @@ Because of that, I absute the crap out of `A` all the time.
 Just like you can jump straight to the end of a line, you can jump to the beginning by pressing `I`. 
 
 
+## Delete the line      
+
+Just like you can delete a character under the cursor and enter Insert mode, you can delete the whole line with `S` and enter Insert mode. 
+
+
 ## Jump to a new line 
 
 This command is, in my opinion, the MVP of Vim. I use it more than any other command from my arsenal. 

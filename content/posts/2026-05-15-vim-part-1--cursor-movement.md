@@ -36,6 +36,17 @@ I use `Caps Lock` as my `Esc` button.
 To enter Insert mode but with the cursor to the right, press `a`. 
 
 
+Finally, there is a very handy way of deleting the character and entering Insert mode. For that, you can use `s`. 
+
+You can think about it as `i` to insert to the left of the cursor, `a` to insert to the right of the cursor, and `s` to insert under the cursor. 
+
+- `i` stands for "insert".
+- `a` stands for "append".
+- `s` stands for "swap". (There is no confirmation of that, that is just the way I memoriszed it)
+
+I hope this section didn't confuse you.
+
+
 ## Weird cursor
 
 In Vim, the cursor does not usually lie between characters like in any common editor. At least not in Normal mode. 
