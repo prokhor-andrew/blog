@@ -24,6 +24,21 @@ If the cursor was on the opening bracket, it will take you to the closing one.
 If it was on the closing bracket, it will take you to the opening bracket. 
 
 
+## Jumping between sentences
+
+I am not sure if this can be called a vertical navigation. But still, there is a way to jump between sentences in Vim. 
+
+- `)` - jumps to the beginning of the next sentence. 
+- `(` - jumps to the beginning of the previous sentence.
+
+
+## Jumping between paragraphs
+
+In addition to jumping between words and sentences, Vim allows you to jump between paragraphs.
+
+To jump to the beginning of the next paragraph press `}`. To jump to the beginning of the previous paragraph use `{`.
+
+
 ## Search mode
 
 Search mode is your bread and butter. It is the fastest way to reach a particular word around the file without much mental overhead, with the only exception being EasyMotion.
